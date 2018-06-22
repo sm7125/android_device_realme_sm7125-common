@@ -12,6 +12,9 @@ COMMON_PATH := device/realme/sm7125-common
 # APEX image
 DEXPREOPT_GENERATE_APEX_IMAGE := true
 
+# Build
+BUILD_BROKEN_DUP_RULES := true
+
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
