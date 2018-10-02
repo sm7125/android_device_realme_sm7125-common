@@ -10,3 +10,5 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit proprietary targets
 $(call inherit-product-if-exists, vendor/realme/sm7125-common/sm7125-common-vendor.mk)
 
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
