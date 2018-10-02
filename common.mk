@@ -317,6 +317,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     TetheringConfigOverlay
 
+# TextClassifier
+PRODUCT_PACKAGES += \
+    textclassifier.bundle1
+
 # VNDK
 PRODUCT_PACKAGES += \
     vndk_package
