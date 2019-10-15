@@ -259,6 +259,10 @@ PRODUCT_PACKAGES += \
     PresencePolling \
     RcsService
 
+# RealmeParts
+PRODUCT_PACKAGES += \
+    RealmeParts
+
 # RenderScript HAL
 PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl
