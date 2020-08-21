@@ -137,6 +137,10 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     kernel/realme/sm7125
 
+# Tethering
+PRODUCT_PACKAGES += \
+    TetheringConfigOverlay
+
 # VNDK
 PRODUCT_PACKAGES += \
     vndk_package
