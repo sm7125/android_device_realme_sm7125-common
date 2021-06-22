@@ -512,6 +512,9 @@ on property:sys.boot_completed=1
     #Reinit lmkd to reconfigure lmkd properties
     setprop lmkd.reinit 1
 
+    # Fix for AOD
+    write /sys/kernel/oppo_display/aod_area "290 414 699 1270 0 1 0 255"
+
 on property:persist.vendor.radio.atfwd.start=false
     stop vendor.atfwd
 
