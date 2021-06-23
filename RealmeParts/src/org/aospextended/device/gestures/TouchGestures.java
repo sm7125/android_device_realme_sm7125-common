@@ -118,6 +118,14 @@ public class TouchGestures extends PreferenceFragment implements
         setHasOptionsMenu(true);
     }
 
+    public static boolean isSupported() {
+        return Utils.fileWritable(GESTURE_PATH) || Utils.fileWritable(DT2W_PATH);
+    }
+
+    public static boolean isSupported(String filepath) {
+        return Utils.fileWritable(filepath);
+    }
+
     public static void enableGestures(boolean enable) {
             if (Utils.fileExists(GESTURE_PATH)) {
                 Utils.writeLine(GESTURE_PATH, enable ? "1" : "0");
@@ -125,7 +133,7 @@ public class TouchGestures extends PreferenceFragment implements
     }
 
     public static void enableDt2w(boolean enable) {
-            if (Utils.fileExists(GESTURE_PATH)) {
+            if (Utils.fileExists(DT2W_PATH)) {
                 Utils.writeLine(DT2W_PATH, enable ? "1" : "0");
             }
     }
@@ -140,10 +148,13 @@ public class TouchGestures extends PreferenceFragment implements
 
         prefs = getPreferenceScreen();
 
+        PreferenceCategory dt2w = (PreferenceCategory) prefs.findPreference("dt2w");
         mEnableDt2w = (SwitchPreference) prefs.findPreference(PREF_DT2W_ENABLE);
 
+        PreferenceCategory gestures = (PreferenceCategory) prefs.findPreference("gestures");
         mEnableGestures = (SwitchPreference) prefs.findPreference(PREF_GESTURE_ENABLE);
 
+        PreferenceCategory haptic = (PreferenceCategory) prefs.findPreference("haptic");
         mHapticFeedback = (SwitchPreference) findPreference(KEY_GESTURE_HAPTIC_FEEDBACK);
         mHapticFeedback.setChecked(mPrefs.getInt(Utils.TOUCHSCREEN_GESTURE_HAPTIC_FEEDBACK, 1) != 0);
         mHapticFeedback.setOnPreferenceChangeListener(this);
@@ -198,6 +209,16 @@ public class TouchGestures extends PreferenceFragment implements
                 mPrefs.getBoolean(PREF_GESTURE_ENABLE, true);
         mEnableGestures.setChecked(enableGestures);
         mEnableGestures.setOnPreferenceChangeListener(this);
+
+        if (!isSupported(DT2W_PATH)) {
+            getPreferenceScreen().removePreference(dt2w);
+        }
+        if (!isSupported()) {
+            getPreferenceScreen().removePreference(haptic);
+        }
+        if (!isSupported(GESTURE_PATH)) {
+            getPreferenceScreen().removePreference(gestures);
+        }
 
         return prefs;
     }

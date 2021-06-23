@@ -40,6 +40,7 @@ import androidx.preference.PreferenceScreen;
 import androidx.preference.SwitchPreference;
 import androidx.preference.TwoStatePreference;
 
+import org.aospextended.device.gestures.TouchGestures;
 import org.aospextended.device.gestures.TouchGesturesActivity;
 import org.aospextended.device.doze.DozeSettingsActivity;
 import org.aospextended.device.vibration.VibratorStrengthPreference;
@@ -72,6 +73,8 @@ public class RealmeParts extends PreferenceFragment implements
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         setPreferencesFromResource(R.xml.RealmeParts, rootKey);
 
+        PreferenceCategory gestures = (PreferenceCategory) getPreferenceScreen()
+                 .findPreference("gestures_category");
         mGesturesPref = findPreference("screen_gestures");
         mGesturesPref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
             @Override
@@ -81,6 +84,10 @@ public class RealmeParts extends PreferenceFragment implements
                 return true;
             }
         });
+        if (!TouchGestures.isSupported()) {
+            getPreferenceScreen().removePreference(gestures);
+        }
+
         mDozePref = findPreference("doze");
         mDozePref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
             @Override
@@ -91,8 +98,12 @@ public class RealmeParts extends PreferenceFragment implements
             }
         });
 
+        PreferenceCategory vib_strength = (PreferenceCategory) getPreferenceScreen()
+                 .findPreference("vib_strength_category");
         mVibratorStrength = (VibratorStrengthPreference) findPreference(VibratorStrengthPreference.KEY_VIBSTRENGTH);
-        mVibratorStrength.setEnabled(VibratorStrengthPreference.isSupported());
+        if (!VibratorStrengthPreference.isSupported()) {
+            getPreferenceScreen().removePreference(vib_strength);
+        }
     }
 
     @Override
