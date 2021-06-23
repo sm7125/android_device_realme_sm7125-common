@@ -60,7 +60,7 @@ public class KeyHandler implements DeviceKeyHandler {
     private static final int GESTURE_REQUEST = 1;
     private static final int GESTURE_WAKELOCK_DURATION = 2000;
 
-    private static final int GESTURE_DOUBLE_TAP_SCANCODE = 248;
+    private static final int GESTURE_DOUBLE_TAP_SCANCODE = 62;
     private static final int GESTURE_W_SCANCODE = 246;
     private static final int GESTURE_M_SCANCODE = 247;
     private static final int GESTURE_CIRCLE_SCANCODE = 249;
@@ -168,9 +168,9 @@ public class KeyHandler implements DeviceKeyHandler {
                 break;
             }
 
-            if (action == null || action.equals(Action.ACTION_NULL)) return;
-
             if (DEBUG) Slog.d(TAG, "scancode: " + event.getScanCode() + "action: " + action);
+
+            if (action == null || action.equals(Action.ACTION_NULL)) return;
 
             if (action.equals(Action.ACTION_CAMERA)) {
                 Action.processAction(mContext, Action.ACTION_WAKE_DEVICE, false);
