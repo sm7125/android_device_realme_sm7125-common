@@ -109,12 +109,13 @@ public class RealmeParts extends PreferenceFragment implements
         mOTG.setChecked(mPrefs.getBoolean(PREF_OTG, false));
         mOTG.setOnPreferenceChangeListener(this);
 
-        PreferenceCategory vib_strength = (PreferenceCategory) getPreferenceScreen()
+/*        PreferenceCategory vib_strength = (PreferenceCategory) getPreferenceScreen()
                  .findPreference("vib_strength_category");
         mVibratorStrength = (VibratorStrengthPreference) findPreference(VibratorStrengthPreference.KEY_VIBSTRENGTH);
         if (!VibratorStrengthPreference.isSupported()) {
             getPreferenceScreen().removePreference(vib_strength);
         }
+*/
     }
 
     @Override

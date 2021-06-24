@@ -48,7 +48,7 @@ public class BootReceiver extends BroadcastReceiver {
                 RealmeParts.PREF_OTG, false));
         }
         DozeUtils.checkDozeService(context);
-        VibratorStrengthPreference.restore(context);
+//        VibratorStrengthPreference.restore(context);
     }
 
     private void enableComponent(Context context, String component) {
