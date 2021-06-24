@@ -24,6 +24,16 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:key="otg_category"
+        android:title="@string/otg">
+
+        <SwitchPreference
+            android:key="otg"
+            android:summary="@string/otg_summary"
+            android:title="@string/otg_title" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="vib_strength_category"
         android:title="@string/vibrator_intensity_control">
 

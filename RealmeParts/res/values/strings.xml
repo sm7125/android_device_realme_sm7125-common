@@ -175,4 +175,10 @@
     <string name="raise_to_wake_gesture_title">Raise to wake</string>
     <string name="raise_to_wake_gesture_summary">Wake up the device instead of pulsing notification</string>
 
+  
+    <!-- OTG strings-->
+    <string name="otg">OTG</string>
+    <string name="otg_title">Enable OTG</string>
+    <string name="otg_summary">Enable USB on-the-go device</string>
+
 </resources>

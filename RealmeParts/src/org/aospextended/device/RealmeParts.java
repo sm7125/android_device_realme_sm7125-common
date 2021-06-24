@@ -56,22 +56,29 @@ import java.io.*;
 import android.widget.Toast;
 
 import org.aospextended.device.R;
+import org.aospextended.device.util.Utils;
 
 public class RealmeParts extends PreferenceFragment implements
         Preference.OnPreferenceChangeListener {
     private static final boolean DEBUG = true;
     private static final String TAG = "RealmeParts";
 
+    public static final String PREF_OTG = "otg";
+    public static final String OTG_PATH = "/sys/class/power_supply/usb/otg_switch";
+
     private Context mContext;
-    private SharedPreferences mPreferences;
+    private SharedPreferences mPrefs;
 
     private Preference mDozePref;
     private Preference mGesturesPref;
+    private SwitchPreference mOTG;
     private VibratorStrengthPreference mVibratorStrength;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         setPreferencesFromResource(R.xml.RealmeParts, rootKey);
+
+        mPrefs = Utils.getSharedPreferences(getActivity());
 
         PreferenceCategory gestures = (PreferenceCategory) getPreferenceScreen()
                  .findPreference("gestures_category");
@@ -97,6 +104,10 @@ public class RealmeParts extends PreferenceFragment implements
                 return true;
             }
         });
+
+        mOTG = (SwitchPreference) findPreference(PREF_OTG);
+        mOTG.setChecked(mPrefs.getBoolean(PREF_OTG, false));
+        mOTG.setOnPreferenceChangeListener(this);
 
         PreferenceCategory vib_strength = (PreferenceCategory) getPreferenceScreen()
                  .findPreference("vib_strength_category");
@@ -125,6 +136,18 @@ public class RealmeParts extends PreferenceFragment implements
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         final String key = preference.getKey();
+        if (preference == mOTG) {
+            mPrefs.edit()
+                    .putBoolean(PREF_OTG, (Boolean) newValue).commit();
+            enableOTG((Boolean) newValue);
+            return true;
+        }
         return true;
+    }
+
+    public static void enableOTG(boolean enable) {
+            if (Utils.fileExists(OTG_PATH)) {
+                Utils.writeLine(OTG_PATH, enable ? "1" : "0");
+            }
     }
 }

@@ -1,10 +1,15 @@
 on boot
     # Fix permissions of double tap node
-    chown system system /proc/touchpamel/double_tap_enable
-    chmod 0644 /proc/touchpamel/double_tap_enable
-
-    # Enable OTG by default
-    write /sys/class/power_supply/usb/otg_switch 1
+    chown system system /proc/touchpanel/double_tap_enable
+    chmod 0644 /proc/touchpanel/double_tap_enable
 
     # Fix for AOD
     write /sys/kernel/oppo_display/aod_area "290 414 699 1270 0 1 0 255"
+
+    # Vibrator node
+    chown system system /sys/class/leds/vibrator/vmax_mv
+    chmod 0644 /sys/class/leds/vibrator/vmax_mv
+
+    # OTG
+    chown system system /sys/class/power_supply/usb/otg_switch
+    chmod 0644 /sys/class/power_supply/usb/otg_switch

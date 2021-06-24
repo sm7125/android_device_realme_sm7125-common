@@ -125,6 +125,7 @@ on boot
     write /dev/cpuset/system-background/cpus 0-7
 
     chown system system /sys/class/leds/vibrator/vmax_mv
+    chmod 0644 /sys/class/leds/vibrator/vmax_mv
 
 # Add a cpuset for the camera daemon
 # We want all cores for camera
