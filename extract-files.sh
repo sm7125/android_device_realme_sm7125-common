@@ -55,6 +55,14 @@ if [ -z "${SRC}" ]; then
     SRC="adb"
 fi
 
+function blob_fixup() {
+    case "${1}" in
+        odm/lib/libgf_hal_G3.so | odm/lib64/libgf_hal_G3.so)
+            sed -i 's/ro.boot.flash.locked/ro.boot.flash.fucked/g' "${2}"
+            ;;
+    esac
+}
+
 if [ -z "${ONLY_TARGET}" ]; then
     # Initialize the helper for common device
     setup_vendor "${DEVICE_COMMON}" "${VENDOR}" "${ANDROID_ROOT}" true "${CLEAN_VENDOR}"

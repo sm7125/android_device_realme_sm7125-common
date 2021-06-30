@@ -136,6 +136,10 @@ vendor.display.qdcm.mode_combine=1
 vendor.display.enable_default_color_mode=1
 vendor.gralloc.disable_ubwc=0
 
+# Goodix FP
+ro.boot.flash.fucked=0
+vendor.fingerprint.cali=1
+
 # FM
 vendor.hw.fm.init=0
 
