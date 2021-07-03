@@ -138,6 +138,9 @@ TARGET_USES_MKE2FS := true
 # RenderScript
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 
+# RIL
+ENABLE_VENDOR_RIL_SERVICE := true
+
 # Treble
 BOARD_VNDK_VERSION := current
 
