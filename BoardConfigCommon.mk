@@ -8,3 +8,6 @@ COMMON_PATH := device/realme/sm7125-common
 
 # Inherit proprietary blobs
 -include vendor/realme/sm7125-common/BoardConfigVendor.mk
+
+# APEX image
+DEXPREOPT_GENERATE_APEX_IMAGE := true
