@@ -6,9 +6,6 @@
 
 COMMON_PATH := device/realme/sm7125-common
 
-# Inherit proprietary blobs
--include vendor/realme/sm7125-common/BoardConfigVendor.mk
-
 # APEX image
 DEXPREOPT_GENERATE_APEX_IMAGE := true
 
@@ -130,5 +127,16 @@ TARGET_BOOTLOADER_BOARD_NAME := atoll
 BOARD_USES_QCOM_HARDWARE := true
 TARGET_FWK_SUPPORTS_FULL_VALUEADDS := true
 
+# Recovery
+BOARD_INCLUDE_RECOVERY_DTBO := true
+TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/etc/fstab.default
+TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
+TARGET_USERIMAGES_USE_EXT4 := true
+TARGET_USERIMAGES_USE_F2FS := true
+TARGET_USES_MKE2FS := true
+
 # Treble
 BOARD_VNDK_VERSION := current
+
+# Inherit proprietary blobs
+-include vendor/realme/sm7125-common/BoardConfigVendor.mk
