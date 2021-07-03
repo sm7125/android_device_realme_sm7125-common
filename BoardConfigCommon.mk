@@ -135,6 +135,9 @@ TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 TARGET_USES_MKE2FS := true
 
+# RenderScript
+OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
+
 # Treble
 BOARD_VNDK_VERSION := current
 
