@@ -34,6 +34,17 @@ vendor/lib/vendor.qti.hardware.alarm@1.0.so
 vendor/lib64/hw/vendor.qti.hardware.alarm@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.alarm@1.0.so
 
+# Alipay Firmware
+odm/vendor/firmware/alipay.b07
+odm/vendor/firmware/alipay.b01
+odm/vendor/firmware/alipay.b06
+odm/vendor/firmware/alipay.b00
+odm/vendor/firmware/alipay.b02
+odm/vendor/firmware/alipay.mdt
+odm/vendor/firmware/alipay.b03
+odm/vendor/firmware/alipay.b05
+odm/vendor/firmware/alipay.b04
+
 # Audio
 vendor/bin/audioflacapp
 vendor/lib/libacdb-fts.so
@@ -341,6 +352,17 @@ vendor/bin/hw/vendor.qti.hardware.capabilityconfigstore@1.0-service
 vendor/etc/init/vendor.qti.hardware.capabilityconfigstore@1.0-service.rc
 vendor/lib/hw/vendor.qti.hardware.capabilityconfigstore@1.0-impl.so
 vendor/lib64/hw/vendor.qti.hardware.capabilityconfigstore@1.0-impl.so
+
+# Crypto Engineering Firmware
+odm/vendor/firmware/cryptoeng.b02
+odm/vendor/firmware/cryptoeng.b07
+odm/vendor/firmware/cryptoeng.b05
+odm/vendor/firmware/cryptoeng.b01
+odm/vendor/firmware/cryptoeng.b03
+odm/vendor/firmware/cryptoeng.b00
+odm/vendor/firmware/cryptoeng.mdt
+odm/vendor/firmware/cryptoeng.b06
+odm/vendor/firmware/cryptoeng.b04
 
 # CVP
 vendor/lib/libcvp.so
@@ -878,6 +900,10 @@ vendor/lib64/vendor.display.postproc@1.0.so
 # Public libraries
 vendor/etc/public.libraries.txt
 
+# QDCM
+vendor/bin/qdcmss
+vendor/etc/init/qdcmss.rc
+
 # QMI
 etc/sysconfig/qti_whitelist.xml
 system_ext/etc/sysconfig/qti_whitelist_system_ext.xml
@@ -1256,6 +1282,13 @@ vendor/lib64/libsns_device_mode_stub.so
 vendor/lib64/libsns_registry_skel.so
 odm/etc/sensor/sensor_config.json
 
+# Servicetracker
+vendor/bin/hw/vendor.qti.hardware.servicetracker@1.2-service
+vendor/etc/init/vendor.qti.hardware.servicetracker@1.2-service.rc
+-vendor/etc/vintf/manifest/vendor.qti.hardware.servicetracker@1.2-service.xml
+vendor/lib/hw/vendor.qti.hardware.servicetracker@1.2-impl.so
+vendor/lib64/hw/vendor.qti.hardware.servicetracker@1.2-impl.so
+
 # TEE SecureUI
 vendor/lib/libGPQTEEC_vendor.so
 vendor/lib/libGPTEE_vendor.so
@@ -1281,6 +1314,20 @@ vendor/lib/libsecureui.so
 vendor/lib/libsecureui_svcsock.so
 vendor/lib64/libsecureui.so
 vendor/lib64/libsecureui_svcsock.so
+
+# Thermal
+vendor/bin/thermal-engine
+vendor/etc/init/init_thermal-engine.rc
+vendor/etc/thermal-engine.conf
+vendor/lib/libthermalclient.so
+vendor/lib64/libthermalclient.so
+
+# Time services
+-vendor/app/TimeService/TimeService.apk
+vendor/bin/time_daemon
+vendor/etc/init/init.time_daemon.rc
+vendor/lib/libtime_genoff.so
+vendor/lib64/libtime_genoff.so
 
 # Vibrator
 vendor/firmware/aw8697_haptic.bin
