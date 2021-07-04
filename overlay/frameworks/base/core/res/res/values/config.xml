@@ -561,4 +561,10 @@
     <!-- Whether device has VOOC charging support -->
     <bool name="config_hasVoocCharger">true</bool>
 
+    <!-- Whether device has screen with higher aspect ratio -->
+    <bool name="config_haveHigherAspectRatioScreen">true</bool>
+
+    <!-- Full screen aspect ratio -->
+    <item name="config_screenAspectRatio" format="float" type="dimen">2.222</item>
+
 </resources>
