@@ -243,6 +243,10 @@ DEVICE_PACKAGE_OVERLAYS += \
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.perf@2.2.vendor
 
+# Power
+PRODUCT_PACKAGES += \
+    android.hardware.power-service
+
 # QTI FWK Detect
 PRODUCT_PACKAGES += \
     libqti_vndfwk_detect.vendor \
