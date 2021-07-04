@@ -373,6 +373,52 @@ vendor/lib/libdpmqmihal.so
 vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so
 vendor/lib64/libdpmqmihal.so
 
+# DRM
+vendor/bin/qseecomd
+vendor/etc/gpfspath_oem_config.xml
+vendor/etc/init/qseecomd.rc
+vendor/lib/libGPreqcancel.so
+vendor/lib/libGPreqcancel_svc.so
+vendor/lib/libQSEEComAPI.so
+vendor/lib/libcpion.so
+vendor/lib/libdrmfs.so
+vendor/lib/libdrmtime.so
+vendor/lib/libminkdescriptor.so
+vendor/lib/libminksocket.so
+vendor/lib/liboemcrypto.so
+vendor/lib/libops.so
+vendor/lib/libqisl.so
+vendor/lib/librpmb.so
+vendor/lib/libssd.so
+vendor/lib/libtrustedapploader.so
+vendor/lib64/libGPreqcancel.so
+vendor/lib64/libGPreqcancel_svc.so
+vendor/lib64/libQSEEComAPI.so
+vendor/lib64/libcpion.so
+vendor/lib64/libdrmfs.so
+vendor/lib64/libdrmtime.so
+vendor/lib64/libminkdescriptor.so
+vendor/lib64/libminksocket.so
+vendor/lib64/liboemcrypto.so
+vendor/lib64/libops.so
+vendor/lib64/libqisl.so
+vendor/lib64/librpmb.so
+vendor/lib64/libssd.so
+vendor/lib/libcppf.so
+vendor/lib64/libtrustedapploader.so
+odm/lib/libqsee_keybox_ca.so
+odm/lib64/libqsee_keybox_ca.so
+
+# DRM (Widevine)
+odm/bin/hw/android.hardware.drm@1.3-service.widevine
+odm/etc/init/android.hardware.drm@1.3-service.widevine.rc
+-odm/etc/vintf/manifest/manifest_android.hardware.drm@1.3-service.widevine.xml
+odm/lib64/mediadrm/libwvdrmengine.so
+odm/lib/mediadrm/libwvdrmengine.so
+odm/lib64/libwvhidl.so
+odm/lib/liboemcrypto.so
+odm/lib64/liboemcrypto.so
+
 # DSP
 vendor/bin/dspservice
 vendor/etc/init/vendor.qti.hardware.dsp@1.0-service.rc
@@ -386,4 +432,50 @@ system_ext/lib64/libfm-hci.so
 vendor/lib64/ftm_fm_lib.so
 vendor/lib64/hw/vendor.qti.hardware.fm@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.fm@1.0.so
+
+# Gatekeeper
+vendor/bin/hw/android.hardware.gatekeeper@1.0-service-qti
+vendor/etc/init/android.hardware.gatekeeper@1.0-service-qti.rc
+vendor/lib/hw/android.hardware.gatekeeper@1.0-impl-qti.so
+vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl-qti.so
+
+# Keymaster
+vendor/bin/hw/android.hardware.keymaster@4.0-service-qti
+vendor/etc/init/android.hardware.keymaster@4.0-service-qti.rc
+vendor/lib/libkeymasterdeviceutils.so
+vendor/lib/libkeymasterutils.so
+vendor/lib/libqcbor.so
+vendor/lib/libqtikeymaster4.so
+vendor/lib64/libkeymasterdeviceutils.so
+vendor/lib64/libkeymasterutils.so
+vendor/lib64/libqcbor.so
+vendor/lib64/libqtikeymaster4.so
+vendor/lib/libkeymasterprovision.so
+vendor/lib64/libkeymasterprovision.so
+
+# TEE SecureUI
+vendor/lib/libGPQTEEC_vendor.so
+vendor/lib/libGPTEE_vendor.so
+vendor/lib/libQTEEConnector_vendor.so
+vendor/lib/libStDrvInt.so
+vendor/lib/libTouchInputVM.so
+vendor/lib/libTrustedInput.so
+vendor/lib/libTrustedInputTZ.so
+vendor/lib/libTrustedUI.so
+vendor/lib/libTrustedUITZ.so
+vendor/lib/libSecureUILib.so
+vendor/lib64/libGPQTEEC_vendor.so
+vendor/lib64/libGPTEE_vendor.so
+vendor/lib64/libQTEEConnector_vendor.so
+vendor/lib64/libSecureUILib.so
+vendor/lib64/libStDrvInt.so
+vendor/lib64/libTouchInputVM.so
+vendor/lib64/libTrustedInput.so
+vendor/lib64/libTrustedInputTZ.so
+vendor/lib64/libTrustedUI.so
+vendor/lib64/libTrustedUITZ.so
+vendor/lib/libsecureui.so
+vendor/lib/libsecureui_svcsock.so
+vendor/lib64/libsecureui.so
+vendor/lib64/libsecureui_svcsock.so
 
