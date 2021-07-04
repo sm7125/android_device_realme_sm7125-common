@@ -1282,3 +1282,7 @@ vendor/lib/libsecureui_svcsock.so
 vendor/lib64/libsecureui.so
 vendor/lib64/libsecureui_svcsock.so
 
+# Vibrator
+vendor/firmware/aw8697_haptic.bin
+vendor/firmware/aw8697_haptic_170.bin
+vendor/firmware/aw8697_haptic_235.bin
