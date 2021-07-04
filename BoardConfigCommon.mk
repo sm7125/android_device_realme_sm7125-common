@@ -58,6 +58,9 @@ TARGET_USE_QTI_BT_STACK := true
 TARGET_NO_BOOTLOADER := true
 TARGET_BOOTLOADER_BOARD_NAME := atoll
 
+# Camera
+TARGET_USES_QTI_CAMERA_DEVICE := true
+
 # Dex
 ifeq ($(HOST_OS),linux)
     WITH_DEXPREOPT ?= false
