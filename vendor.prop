@@ -105,3 +105,6 @@ ro.bluetooth.wipower=true
 ro.vendor.bluetooth.wipower=false
 vendor.bluetooth.soc=cherokee
 vendor.qcom.bluetooth.soc=cherokee
+
+# CNE
+persist.vendor.cne.feature=1
