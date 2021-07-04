@@ -25,4 +25,7 @@
 
     <!-- Color of the FOD view -->
     <color name="config_fodColor">#00ffffff</color>
+
+    <!-- The bottom margin of the keyguard security container -->
+    <dimen name="kg_security_container_min_bottom_margin">469px</dimen>
 </resources>
